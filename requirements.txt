@@ -1,9 +1,4 @@
-uvicorn
-fastapi
-opencv-python-headless
-numpy
-pandas
-python-multipart
-tensorflow-cpu
+streamlit
 streamlit_drawable_canvas
-scikit-learn
+requests
+Pillow
