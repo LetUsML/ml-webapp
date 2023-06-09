@@ -1,6 +1,6 @@
 # syntax=docker/dockerfile:1.3
 
-FROM ubuntu:22.04
+FROM ubuntu:20.04
 ENV DEBIAN_FRONTEND=noninteractive
 RUN mv /etc/apt/sources.list /etc/apt/sources.list.backup
 RUN echo "deb http://mirrors.163.com/ubuntu/ jammy main restricted universe multiverse\n" >> /etc/apt/sources.list
@@ -32,7 +32,7 @@ RUN apt install -y --fix-missing \
 
 COPY backend.py backend.py
 COPY requirements.txt requirements.txt
-COPY mnist.hdf5 mnist.hdf5
+COPY keras_model_9.h5 keras_model_9.h5
 RUN --mount=type=cache,target=/root/.cache pip install -i https://pypi.tuna.tsinghua.edu.cn/simple -U pip
 RUN --mount=type=cache,target=/root/.cache pip install -i https://pypi.tuna.tsinghua.edu.cn/simple -r requirements.txt
 
